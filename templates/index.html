@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa para você ❤️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Oi, meu amor!</h1>
+         <p>Preparei esse cantinho especial para você.</p>
+        <p>Quero que saiba o quanto você é importante na minha vida.</p>
+        <p>Cada dia ao seu lado é um presente.</p>
+        <div class="foto">
+            <!-- substitua pela sua imagem -->
+            <img src="{{ url_for('static', filename='nossa_foto.jfif') }}" alt="Nós dois">
+        </div>
+        <p>Estamos juntos há:</p>
+        <div id="contador"></div>
+        <p>E cada dia é mais especial!</p>
+    </div>
+
+    <script>
+        // Calcula os dias desde uma data específica
+        function atualizarContador() {
+            const dataInicio = new Date(2022, 4, 10); // Altere para o dia que vocês começaram (ano, mês-1, dia)
+            const hoje = new Date();
+            const diff = Math.floor((hoje - dataInicio) / (1000 * 60 * 60 * 24));
+            document.getElementById('contador').innerText = diff + " dias de muito amor!";
+        }
+        atualizarContador();
+    </script>
+</body>
+</html>
